@@ -7,6 +7,7 @@ export interface PersonalInfo {
   github: string
   linkedin: string
   avatar: string
+  cvUrl?: string
 }
 
 export interface Skill {

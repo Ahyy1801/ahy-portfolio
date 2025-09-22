@@ -1,6 +1,7 @@
 import Image from "next/image"
 import { Button } from "@/components/ui/button"
 import { personalInfo } from "@/lib/data/personal-info"
+import DownloadCV from "@/components/common/DownloadCV"
 
 export default function HeroSection() {
   return (
@@ -20,15 +21,13 @@ export default function HeroSection() {
           </div>
 
           <div className="flex gap-4">
-            <Button className="bg-primary text-primary-foreground hover:bg-primary/90 transition-all duration-300 hover:scale-105 hover:shadow-lg">
+            <Button 
+              onClick={() => document.getElementById('projects')?.scrollIntoView({ behavior: 'smooth' })}
+              className="bg-primary text-primary-foreground hover:bg-primary/90 transition-all duration-300 hover:scale-105 hover:shadow-lg"
+            >
               View Projects
             </Button>
-            <Button
-              variant="outline"
-              className="border-border hover:bg-accent bg-transparent transition-all duration-300 hover:scale-105"
-            >
-              Download CV
-            </Button>
+            <DownloadCV />
           </div>
         </div>
 

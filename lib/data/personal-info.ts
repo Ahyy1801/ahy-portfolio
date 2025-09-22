@@ -8,7 +8,8 @@ export const personalInfo: PersonalInfo = {
   phone: "0963384293",
   github: "https://github.com/Ahyy1801",
   linkedin: "https://linkedin.com/in/Ahy1801",
-  avatar: "/profile-photo.jpg"
+  avatar: "/profile-photo.jpg",
+  cvUrl: "/CV_Cao_Van_Huy.pdf"
 }
 
 export const aboutDescription = {
