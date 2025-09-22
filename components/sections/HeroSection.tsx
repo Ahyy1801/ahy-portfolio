@@ -1,5 +1,7 @@
+'use client'
+
 import Image from "next/image"
-import { Button } from "@/components/ui/button"
+import SimpleButton from "@/components/common/SimpleButton"
 import { personalInfo } from "@/lib/data/personal-info"
 import SimpleDownloadCV from "@/components/common/SimpleDownloadCV"
 
@@ -21,12 +23,12 @@ export default function HeroSection() {
           </div>
 
           <div className="flex gap-4">
-            <Button 
+            <SimpleButton 
               onClick={() => document.getElementById('projects')?.scrollIntoView({ behavior: 'smooth' })}
               className="bg-primary text-primary-foreground hover:bg-primary/90 transition-all duration-300 hover:scale-105 hover:shadow-lg"
             >
               View Projects
-            </Button>
+            </SimpleButton>
             <SimpleDownloadCV />
           </div>
         </div>
