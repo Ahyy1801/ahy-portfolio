@@ -1,7 +1,7 @@
 import Image from "next/image"
 import { Button } from "@/components/ui/button"
 import { personalInfo } from "@/lib/data/personal-info"
-import DownloadCV from "@/components/common/DownloadCV"
+import SimpleDownloadCV from "@/components/common/SimpleDownloadCV"
 
 export default function HeroSection() {
   return (
@@ -27,7 +27,7 @@ export default function HeroSection() {
             >
               View Projects
             </Button>
-            <DownloadCV />
+            <SimpleDownloadCV />
           </div>
         </div>
 

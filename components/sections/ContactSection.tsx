@@ -2,7 +2,7 @@ import { Github, Linkedin, Mail, Phone } from "lucide-react"
 import { personalInfo } from "@/lib/data/personal-info"
 import { socialLinks } from "@/lib/constants/navigation"
 import ContactForm from "@/components/common/ContactForm"
-import DownloadCV from "@/components/common/DownloadCV"
+import SimpleDownloadCV from "@/components/common/SimpleDownloadCV"
 
 const iconMap = {
   Github,
@@ -71,7 +71,7 @@ export default function ContactSection() {
 
           <div className="pt-6 border-t border-border">
             <h4 className="text-lg font-semibold mb-3">Want to know more about me?</h4>
-            <DownloadCV variant="default" className="w-full sm:w-auto" />
+            <SimpleDownloadCV />
           </div>
         </div>
 

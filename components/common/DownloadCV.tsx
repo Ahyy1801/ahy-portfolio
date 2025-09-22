@@ -1,7 +1,7 @@
 'use client'
 
 import { Button } from '@/components/ui/button'
-import { Download, FileText } from 'lucide-react'
+import { Download, FileText, ExternalLink } from 'lucide-react'
 import { personalInfo } from '@/lib/data/personal-info'
 
 interface DownloadCVProps {
@@ -17,45 +17,30 @@ export default function DownloadCV({
   className = '',
   showIcon = true 
 }: DownloadCVProps) {
-  const handleDownload = () => {
-    if (!personalInfo.cvUrl) {
-      console.warn('CV URL not configured')
-      return
-    }
+  
+  const cvUrl = personalInfo.cvUrl || '/CV_Cao_Van_Huy.pdf'
 
-    // Create a temporary anchor element to trigger download
-    const link = document.createElement('a')
-    link.href = personalInfo.cvUrl
-    link.download = `${personalInfo.name.replace(/\s+/g, '_')}_CV.pdf`
-    link.target = '_blank'
+  const handleDownload = (e: React.MouseEvent) => {
+    e.preventDefault()
     
-    // Append to body, click, and remove
+    console.log('Download clicked, CV URL:', cvUrl)
+    
+    // Method 1: Direct download link
+    const link = document.createElement('a')
+    link.href = cvUrl
+    link.download = 'Cao_Van_Huy_CV.pdf'
+    link.target = '_blank'
+    link.rel = 'noopener noreferrer'
+    
+    // Force click
     document.body.appendChild(link)
     link.click()
     document.body.removeChild(link)
-
-    // Analytics tracking (optional)
-    if (typeof window !== 'undefined' && window.gtag) {
-      window.gtag('event', 'download', {
-        event_category: 'CV',
-        event_label: 'Portfolio CV Download',
-        value: 1
-      })
-    }
   }
 
-  const handleViewCV = () => {
-    if (!personalInfo.cvUrl) {
-      console.warn('CV URL not configured')
-      return
-    }
-
-    // Open CV in new tab for viewing
-    window.open(personalInfo.cvUrl, '_blank')
-  }
-
-  if (!personalInfo.cvUrl) {
-    return null
+  const handleView = (e: React.MouseEvent) => {
+    e.preventDefault()
+    window.open(cvUrl, '_blank', 'noopener,noreferrer')
   }
 
   return (
@@ -71,7 +56,7 @@ export default function DownloadCV({
       </Button>
       
       <Button
-        onClick={handleViewCV}
+        onClick={handleView}
         variant="ghost"
         size={size}
         className="transition-all duration-300 hover:scale-105"
@@ -79,17 +64,18 @@ export default function DownloadCV({
       >
         <FileText className="w-4 h-4" />
       </Button>
+
+      {/* Fallback: Direct link */}
+      <a
+        href={cvUrl}
+        download="Cao_Van_Huy_CV.pdf"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="hidden"
+        id="cv-download-fallback"
+      >
+        Download CV Fallback
+      </a>
     </div>
   )
-}
-
-// TypeScript declaration for gtag (Google Analytics)
-declare global {
-  interface Window {
-    gtag?: (
-      command: string,
-      action: string,
-      parameters: Record<string, any>
-    ) => void
-  }
 }
