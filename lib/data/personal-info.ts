@@ -2,7 +2,7 @@ import { PersonalInfo, Skill } from '@/lib/types'
 
 export const personalInfo: PersonalInfo = {
   name: "Cao Van Huy",
-  title: "Game Designer, Game Developer & Software Engineer",
+  title: "Game Designer & Software Engineer",
   description: "I specialize in game design with Unity and software development, passionate about creating engaging interactive experiences and effective project management.",
   email: "huycv18.work@gmail.com",
   phone: "0963384293",

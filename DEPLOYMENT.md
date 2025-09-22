@@ -14,7 +14,7 @@ Copy `.env.example` to `.env.local` and update:
 ```bash
 NEXT_PUBLIC_SITE_URL=https://your-domain.vercel.app
 NEXT_PUBLIC_SITE_NAME="Cao Van Huy Portfolio"
-CONTACT_EMAIL=huycv18.work@gmail.com
+CONTACT_EMAIL=huycv18@gmail.com
 GOOGLE_SITE_VERIFICATION=your-verification-code
 ```
 

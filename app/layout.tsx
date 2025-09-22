@@ -12,10 +12,9 @@ export const metadata: Metadata = {
     template: "%s | Cao Van Huy Portfolio"
   },
   description:
-    "Game Designer, Game Developer & Software Engineer Portfolio. Specializing in Unity game development, C# programming, and leading tech communities at FPT University.",
+    "Game Designer & Software Engineer Portfolio. Specializing in Unity game development, C# programming, and leading tech communities at FPT University.",
   keywords: [
     "Game Designer",
-    "Game Developer", 
     "Software Engineer",
     "Unity Developer",
     "C# Programming",

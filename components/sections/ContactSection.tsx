@@ -1,8 +1,7 @@
 import { Github, Linkedin, Mail, Phone } from "lucide-react"
-import { Button } from "@/components/ui/button"
-import { Card } from "@/components/ui/card"
 import { personalInfo } from "@/lib/data/personal-info"
 import { socialLinks } from "@/lib/constants/navigation"
+import ContactForm from "@/components/common/ContactForm"
 
 const iconMap = {
   Github,
@@ -70,37 +69,7 @@ export default function ContactSection() {
           </div>
         </div>
 
-        <Card className="p-8 bg-card border-border fade-in hover-lift">
-          <form className="space-y-6">
-            <div>
-              <label className="block text-sm font-medium mb-2">Your Name</label>
-              <input
-                type="text"
-                className="w-full px-4 py-3 bg-background border border-border rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent transition-all duration-300"
-                placeholder="Enter your name"
-              />
-            </div>
-            <div>
-              <label className="block text-sm font-medium mb-2">Email</label>
-              <input
-                type="email"
-                className="w-full px-4 py-3 bg-background border border-border rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent transition-all duration-300"
-                placeholder="Enter your email"
-              />
-            </div>
-            <div>
-              <label className="block text-sm font-medium mb-2">Message</label>
-              <textarea
-                rows={4}
-                className="w-full px-4 py-3 bg-background border border-border rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent transition-all duration-300"
-                placeholder="Enter your message"
-              ></textarea>
-            </div>
-            <Button className="w-full bg-primary text-primary-foreground hover:bg-primary/90 transition-all duration-300 hover:scale-105">
-              Send Message
-            </Button>
-          </form>
-        </Card>
+        <ContactForm />
       </div>
     </section>
   )
